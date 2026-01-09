@@ -178,3 +178,85 @@
     font-size: 1.2rem;
   }
 }
+
+/* Container for the 4 videos */
+.video-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding-bottom: 50px;
+}
+
+.card {
+  width: 260px;
+  height: 170px;
+  background-color: #1a1a1a; /* Replaced orange with sleek dark grey */
+  border-radius: 15px;
+  border: 1px solid rgb(156, 151, 151);
+  position: relative;
+  transition: all .3s ease;
+  overflow: hidden; /* Ensures video stays inside border-radius */
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps the screenshot filling the box */
+  display: block;
+}
+
+.card__icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10px;
+  padding-top: 10px;
+  gap: 10px;
+  opacity: 0;
+  transition: all .3s ease;
+  cursor: pointer;
+  z-index: 2; /* Sits above the video */
+}
+
+.card__time {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85em;
+  font-weight: 500;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px 8px;
+  color: whitesmoke;
+  background-color: rgba(77, 67, 67, 0.8); /* Semi-transparent */
+  z-index: 2;
+}
+
+.svg-icon {
+  background-color: rgba(77, 67, 67, 0.9);
+  color: #ece6e6;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease-in-out;
+}
+
+.card:hover {
+  opacity: 0.9;
+  transform: translateY(-5px); /* Adds a little lift on hover */
+}
+
+.card:hover .card__icons {
+  opacity: 1;
+}
